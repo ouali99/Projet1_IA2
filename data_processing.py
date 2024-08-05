@@ -1,14 +1,15 @@
 import cv2
 import os
 import numpy as np
-from descriptor import glcm, bitdesc
+from descriptor import glcm, bitdesc,haralick_feat
  
 # List of descriptors
-descriptors = [glcm, bitdesc]
+descriptors = [glcm, bitdesc,haralick_feat]
  
 def process_datasets(root_folder, descriptors):
     all_features_glcm = []  # List to store features for GLCM
     all_features_bitdesc = []  # List to store features for BITdesc
+    #all_features_haralick_feat = [] #List to store feature for haralick_feat
  
     for root, dirs, files in os.walk(root_folder):
         for file in files:
